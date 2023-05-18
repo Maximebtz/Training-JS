@@ -6,13 +6,35 @@ box.classList.add('box');
 
 const board = document.querySelector('#board');
 
-board.appendChild(box);
 
-box.innerText = ("TEXT")
+let nb = 1;
 
 
-box.addEventListener('click', function() {
-    alert("Class : box\n - width: 200px\n - height: 200px\n - background-color: darkcyan\n - font-size: 3em\n - font-weight: 600\n - color: ghostwhite")
-})
+for(let i = 1; i <= 4; i++){
+    
+    const newbox = box.cloneNode();
+    newbox.innerText = i;
+    
+    board.appendChild(newbox);
+
+    let active = false;
+
+    newbox.addEventListener('click', function() {
+
+        active = !active;
+
+        if(active){
+        newbox.style.transform = "scale(0.9) rotate(360deg)";
+        newbox.style.transition = "all 2s";
+        newbox.style.background = "crimson";
+        } else {
+            newbox.style.transform = "scale(1) rotate(0)";
+            newbox.style.transition = "all 2s";
+            newbox.style.background = "darkcyan";
+        }
+    });
+}
+
+
 
 
