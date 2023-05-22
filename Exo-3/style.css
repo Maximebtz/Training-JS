@@ -3,20 +3,45 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-#board{
-    width: 100%;
+body{
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
-.box{
-    width: 200px;
-    height: 200px;
+#board{
+    width: 500px;
+    line-height: 0;
+}
+
+.square{
+    width: 60px;
+    height: 60px;
     background-color: darkcyan;
-    font-size: 3em;
-    font-weight: 600;
+    /* margin: 10px 10px; */
+    display: inline-flex;
+}
+
+button {
+    margin: 50px;
+    height: 40px;
+    width: 150px;
+    font-weight: bolder;
+    font-size: medium;
+    border: none;
+    box-shadow: cadetblue 0 0 20px;
+    border-radius: 20px;
     color: ghostwhite;
+    background-color: lightseagreen;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    box-shadow: cadetblue 0 0 25px;
+    transform: translateY(-5px);
+}
+
+button:active {
+    transform: scale(1.05);
 }
